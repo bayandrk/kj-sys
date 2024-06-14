@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Notes from {{child.mom}}</title>
+</head>
+<body>
+{% block content %}
+
+<br>
+{{child.name}}
+<br>
+{% for r in report %}
+Child's condition:{{r.location}} in: {{r.created}}
+<br>
+Important_notice :{{r.Important_notice}}
+
+
+<br> <!-- هنا يتم إضافة <br> بعد كل عنصر -->
+{% endfor %}
+<br>
+{% endblock %}
+
+</body>
+</html>

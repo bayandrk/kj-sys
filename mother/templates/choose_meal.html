@@ -1,0 +1,26 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Available Meals</title>
+</head>
+<body>
+    <form method="post">
+        {% csrf_token %}
+    <h1>Available Meals</h1>
+    <h1>choose meal for {{child.name}}</h1>
+    <input type="hidden" name="name" value="{{ child.name }}">
+    {{form.meal}}
+    <ul>
+        {% for meal in meals %}
+            <li>
+                <img src="{% static meal.image %}" alt="{{ meal.names }}" width="100">
+                <p>{{ meal.names }}</p>
+            </li>
+        {% endfor %}
+        <button type="submit">Confirm</button>
+    </ul>
+</form>
+</body>
+</html>

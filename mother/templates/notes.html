@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+
+    <form method="post">
+        {% csrf_token %}
+    
+        <br>
+        <label >Name:</label>
+        <br>
+        {{ form.name }}
+        <br>
+        <label >Add Notes for {{child.name}}:</label>
+        <br>
+        <input type="hidden" name="name" value="{{ child.name }}">
+        <br>
+        <input type="hidden" name="age" value="{{ child.age }}">
+        <br>
+        <input type="hidden" name="gender" value="{{ child.gender }}"> 
+        <br>
+        {{ form.notes }}
+        <li>Child location: {{form.child_location}}</li>
+        <br>
+        <button type="submit">Confirm</button>
+    </form>
+</body>
+</html>
